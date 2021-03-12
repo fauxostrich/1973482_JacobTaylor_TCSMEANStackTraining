@@ -1,0 +1,26 @@
+.bod{
+    background-color: blueviolet;
+    border: solid violet 5px;
+    border-radius: 15px;
+}
+
+.head{
+    text-align: center;
+    color: yellow;
+    font-family: 'Courier New', Courier, monospace;
+    animation-name: headAnime;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.para{
+    text-align: left;
+    font-family: cursive;
+    font-size: medium;
+    color: white;
+}
+
+@keyframes headAnime{
+    0% {margin-left: 20px;}
+    75% {margin-right: 40px;}
+}
