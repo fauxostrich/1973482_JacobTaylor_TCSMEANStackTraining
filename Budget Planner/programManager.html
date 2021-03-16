@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  <script>
+      var i = 0;
+      var clientName = new Array();
+      var projectName= new Array();
+      var budget= new Array();
+      var data;
+    function submitInfo(){
+        clientName[i] = document.getElementById("clientName").value;
+        projectName[i] = document.getElementById("projectName").value;
+        budget[i] = document.getElementById("budget").value;
+        i++;
+        var data =  {"clientName": clientName, "projectName": projectName,"budget": budget};
+        localStorage.setItem("i", i);
+        localStorage.setItem("clientKey"+i, JSON.stringify(clientName));
+        localStorage.setItem("productKey"+i, JSON.stringify(projectName));
+        localStorage.setItem("budgetKey"+i, JSON.stringify(budget));
+        
+    }
+
+    function resetInfo(){
+        document.getElementById("clientName").value="";
+        document.getElementById("projectName").value="";
+        document.getElementById("budget").value="";
+    }
+  </script>
+</head>
+<body>
+    <h2>Program Manager</h2>
+    <label>Client Name</label>
+    <input type="text" id ="clientName"/></br>
+    <label>Project Name</label>
+    <input type="text" id ="projectName"/></br>
+    <label>Budget</label>
+    <input type="number"  id ="budget"/></br>
+
+    <input type="button" value="Add" onclick="submitInfo()"/> <!--Add function from JS-->
+    <input type="button" value="Clear" onclick="resetInfo()"/> <!--Clear function from JS-->
+    <a href ="mainPage.html">Back</a>
+</body>
+</html>
